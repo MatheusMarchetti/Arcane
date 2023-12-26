@@ -1,0 +1,3 @@
+[submodule "Source/Dependencies/glfw"]
+	path = Source/Dependencies/glfw
+	url = https://github.com/Arcane-Studios/glfw.git
