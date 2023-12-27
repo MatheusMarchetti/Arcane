@@ -1,5 +1,7 @@
-/.vs/Arcane
+/.vs
 /Binaries
 /Intermediates
 *.vcxproj
 *.sln
+*.filters
+*.user
