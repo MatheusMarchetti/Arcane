@@ -1,6 +1,8 @@
 #pragma once
 #include "Core/base.h"
 
+#include <functional>
+
 #ifdef ARC_CORE_SHARED
 #define ARC_CORE_API ARC_EXPORT
 #else
@@ -9,25 +11,42 @@
 
 namespace Arcane
 {
-	class ARC_CORE_API Window
+	// use simple function pointers ??
+	struct WindowCallbacksInterface
 	{
-	public:
-		Window() = default;
-		~Window() = default;
+		std::function<void()> closeFnc;
+		std::function<void(int, int)> resizeFnc;
+		std::function<void(int, int, int)> keyFnc;
+		std::function<void(int, int, int)> mouseFnc;
 
-		static void InitializeGLFW();
-		static void TerminateGLFW();
+		std::function<void(double, double)> cursorFnc;
+		std::function<void(double, double)> scrollFnc;
 
-		static void PollEvents();
-
-		void Create(uint32_t width, uint32_t height, const char* name);
-		void Destroy();
-		
-		bool IsOpen();
-		void Show();
-	private:
-		uint32_t m_Width, m_Height;
-		void* m_WindowHandle;
-		void* m_NativeHandle;
+		std::function<void(int, const char**)> dropFnc;
 	};
+
+	struct Window
+	{
+		uint32_t width = 0, height = 0;
+		const char* name = nullptr;
+
+		void* windowHandle = nullptr;
+		void* nativeHandle = nullptr;
+
+		WindowCallbacksInterface callbacks;
+	};
+
+	namespace WindowManager
+	{
+		void ARC_CORE_API Intialize();
+		void ARC_CORE_API Terminate();
+
+		void ARC_CORE_API PollEvents();
+
+		void ARC_CORE_API Create(Window* pWindow);
+		void ARC_CORE_API Destroy(Window* pWindow);
+
+		bool ARC_CORE_API IsOpen(Window* pWindow);
+		void ARC_CORE_API Show(Window* pWindow);
+	}
 }
