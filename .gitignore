@@ -1,5 +1,5 @@
 /.vs/Arcane
 /Binaries
-/Intermediates/glfw
+/Intermediates
 *.vcxproj
 *.sln
