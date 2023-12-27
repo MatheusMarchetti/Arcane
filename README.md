@@ -16,7 +16,7 @@ Write something about the engine in here in the future
 - Method signature
   > int MyFunctionSignatureInCamelCase(Arguments args);
   
-- Member variables prefixed with m_ and static variables prefixed with s_
+- Member variables prefixed with m_ and static variables prefixed with s_ ( no prefix for structs members )
 - Necessary 3rd-party libraries added as git submodules
 - STL containers wrapped in utl namespace
   > namespace utl
@@ -29,7 +29,7 @@ Write something about the engine in here in the future
   >
   > }
 - Constants are _CAPITALIZED_
-- Platform specific code goes behing _#ifdef_ block with  _#pragma error_ on _#else_ statement
+- Platform specific code goes behind _#ifdef_ block with  _#error_ on _#else_ statement
 
 ### Contributors (in alphabetical order)
 - Ishan Chaudhari (_TheSpectreZ_)
