@@ -1,6 +1,7 @@
 filter "system:windows"
     defines "PLATFORM_WINDOWS"
     systemversion "latest"
+    disablewarnings { "4251" }
 
 filter "system:linux"
     defines "PLATFORM_LINUX"
