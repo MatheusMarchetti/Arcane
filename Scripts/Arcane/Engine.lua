@@ -3,6 +3,9 @@ project "Engine"
     cppdialect "C++20"
     location (ArcDir.."%{prj.name}")
 
+    targetdir (BinDir)
+    objdir (IntDir)
+
     files 
     {
         (ArcDir.."%{prj.name}/Include/**.h"),
@@ -13,12 +16,14 @@ project "Engine"
 
     includedirs
     {
-        IncludePath["Engine"] -- self Include
+        IncludePath["Engine"], -- self Include
+        
+        IncludePath["Core"]
     }
 
     links
     {
-        -- add dependencies
+        "Core"
     }
 
     libdirs

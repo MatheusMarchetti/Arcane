@@ -1,5 +1,4 @@
-project "Runtime"
-    kind "ConsoleApp" -- maybe make it windowed app ?
+project "Core"
     language "C++"
     cppdialect "C++20"
     location (ArcDir.."%{prj.name}")
@@ -17,19 +16,24 @@ project "Runtime"
 
     includedirs
     {
-        IncludePath["Runtime"], -- self Include
-        
-        IncludePath["Core"],
-        IncludePath["Engine"],
+        IncludePath["Core"], -- self Include
+
+        IncludePath["glfw"],
     }
 
     links
     {
-        "Core",
-        "Engine"
+        "glfw"
     }
 
     libdirs
     {
         -- add paths for prebuilt libs
     }
+
+    filter "platforms:SharedBuild"
+        defines "ARC_CORE_SHARED"
+        kind "SharedLib"
+    
+    filter "platforms:StaticBuild"
+        kind "StaticLib"

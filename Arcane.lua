@@ -21,6 +21,7 @@ workspace "Arcane"
     group ""
 
     group "Arcane"
+        include "Scripts/Arcane/Core.lua"
         include "Scripts/Arcane/Engine.lua"
     group ""
 

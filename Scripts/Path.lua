@@ -12,5 +12,6 @@ IncludePath = {};
 
 IncludePath["glfw"] = (DepDir.."glfw/include")
 
-IncludePath["Engine"] = (ArcDir.."Engine/Include")
-IncludePath["Runtime"] = (ArcDir.."Runtime/Include")
+IncludePath["Core"]     = (ArcDir.."Core/Include")
+IncludePath["Engine"]   = (ArcDir.."Engine/Include")
+IncludePath["Runtime"]  = (ArcDir.."Runtime/Include")
