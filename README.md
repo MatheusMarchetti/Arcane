@@ -1,14 +1,22 @@
-# Arcane
+# Arcane #
 
-Write something about the engine in here in the future
+Write something about the engine in here in the future.
 
-### Tech stack
+## Getting Started ##
 
-- C++ 20 for engine
-- C# for scripting
-- Premake for build system
+If you want to explore or contribute to any of these projects, follow these steps:
 
-### Contributing
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/Arcane-Studios/Arcane.git --recursive
+    ```
+
+2. Open the Arcane directory and Run `GenerateProjects.bat` from the [Build](Build) directory.
+
+## Contributing ##
+
+If you'd like to contribute to any of the projects, feel free to open an issue or submit a pull request. Contributions, suggestions, and feedback are always welcome!
 
 - To add new features create a branch:
   > developer_name/feature_name
@@ -31,7 +39,13 @@ Write something about the engine in here in the future
 - Constants are _CAPITALIZED_
 - Platform specific code goes behind _#ifdef_ block with  _#error_ on _#else_ statement
 
-### Contributors (in alphabetical order)
+## License ##
+
+This repository is licensed under the [GPL-3.0 License](LICENSE). See the [LICENSE](LICENSE) file for details.
+
+### Contributors 
 - Ishan Chaudhari (_TheSpectreZ_)
 - Matheus Marchetti (_matheusbr16_)
 - Nicholas (_Vorawwgo_)
+- (_AutoPilot2004_)
+---
