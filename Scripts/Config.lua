@@ -1,3 +1,5 @@
+startproject "Runtime"
+
 filter "system:windows"
     defines "PLATFORM_WINDOWS"
     systemversion "latest"
